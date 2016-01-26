@@ -254,7 +254,7 @@ if [[ -z "$cmd_par_app" ]]; then
 	IFS=$'\n'
 	dirlist=(`ls -d1 /Applications/Install\ {OS\ X,macOS}\ *.app 2>/dev/null`)
 	IFS="$save_IFS"
-	[[ ${#dirlist[@]} -eq 0 ]] && exit_with_error "Can't find downloaded OS X upgrade"
+	[[ ${#dirlist[@]} -eq 0 ]] && exit_with_error "Can't find downloaded OS X upgrade. Use the -a option to specify the path to it manually."
 	stage_end_ok "found"
 	if [[ ${#dirlist[@]} -gt 1 ]]; then
 		echo "Several OS upgrades were found."
@@ -324,7 +324,7 @@ else
 fi
 
 stage_start "Creating temporary directory"
-tmp_dir="$(mktemp -d -t osx_iso_tmpdir)" || exit_with_error "Can't create tmp directory"
+tmp_dir="$(mktemp -d -t osx_iso_tmpdir_XXX)" || exit_with_error "Can't create tmp directory"
 # mkdir "tmp-tmp"
 # tmp_dir=$(cd tmp-tmp && pwd) || exit_with_error "Can't create tmp directory"
 stage_end_ok "succeed"

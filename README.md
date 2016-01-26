@@ -6,11 +6,20 @@ Fedora 24 running on i5-6500 + i7-6600U CPU.
 
 Tested with QEMU 2.4.1 and QEMU 2.5.
 
+AMD CPU(s) are known to be problematic. AMD FX-8350 works but Phenom II X3 720
+does not.
+
+Intel VT-x / AMD SVM is required.
+
 ### ISO Creation
 
 * Download OS X El Capitan or macOS Sierra installer from Apple App Store.
 
-* Run the ISO creation script `create_install_iso.sh`, making sure to use 'sudo'.
+* Run the ISO creation script `create_install_iso.sh` included in this
+  repository, making sure to use 'sudo'.
+
+  This script supports specifying the path to OS X / macOS installation
+  application manually via the `-a` option.
 
 * Copy the ISO from your Mac to your QEMU/KVM machine.
 
@@ -92,6 +101,8 @@ following virsh method.
   ```
 
 ### Credits
+
+* PJ Meyer (pjmeyer) - compatibility with modern versions of GNU mktemp
 
 * Robert DeRose (RobertDeRose) and Dirk Bajohr (isolution-de) - macOS support
 
