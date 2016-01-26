@@ -252,7 +252,7 @@ if [[ -z "$cmd_par_app" ]]; then
 	stage_start "Looking for downloaded OS upgrades"
 	unset test_name || exit_with_error
 	IFS=$'\n'
-	dirlist=(`ls -d1 /Applications/Install\ {OS\ X,macOS}\ *.app`)
+	dirlist=(`ls -d1 /Applications/Install\ {OS\ X,macOS}\ *.app 2>/dev/null`)
 	IFS="$save_IFS"
 	[[ ${#dirlist[@]} -eq 0 ]] && exit_with_error "Can't find downloaded OS X upgrade"
 	stage_end_ok "found"
@@ -504,7 +504,7 @@ else
 fi
 
 [[ "$OSX_inst_ver" == "10.11" ]] || [[ "$OSX_inst_ver" =~ 10.11.[1-6] ]] || \
-	echo_warning "Warning! This script is tested only with images of OS X versions 10.11 and 10.11.1-10.11.4. Use at your own risk!"
+	echo_warning "Warning! This script is tested only with images of OS X versions 10.11 and 10.11.1-10.11.6. Use at your own risk!"
 
 stage_start_nl "Renaming partition on writeable image"
 if ! diskutil rename "$OSX_inst_img_rw_mnt" "$OSX_inst_prt_name"; then

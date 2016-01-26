@@ -81,6 +81,16 @@ following virsh method.
   "KernelBooter_kexts"="Yes" "CsrActiveConfig"="103"
   ```
 
+* If you see "hdiutil: attach failed - Resource busy" error message during the
+  ISO creation step, quit the "Install macOS Sierra" program and unmount
+  (eject) the "Install macOS Sierra" device. Disk Utility can help for
+  unmouting disk images.
+
+  ```
+  $ hdiutil info
+  $ hdiutil detach /dev/disk2  # or something similar
+  ```
+
 ### Credits
 
 * Robert DeRose (RobertDeRose) and Dirk Bajohr (isolution-de) - macOS support
@@ -101,6 +111,6 @@ following virsh method.
 
 * https://github.com/Karlson2k/k2k-OSX-Tools
 
-* https://macosxvirtualmachinekvm.wordpress.com/guide-mac-os-x-10-11-el-capitan-vm-on-unraid/
+* [Mac OS X 10.11 El Capitan – VM on unRAID](https://macosxvirtualmachinekvm.wordpress.com/guide-mac-os-x-10-11-el-capitan-vm-on-unraid/)
 
 * http://www.contrib.andrew.cmu.edu/~somlo/OSXKVM/

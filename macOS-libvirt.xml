@@ -17,7 +17,6 @@
   </features>
   <cpu mode='custom' match='exact'>
     <model fallback='allow'>Penryn</model>
-    <vendor>Intel</vendor>
   </cpu>
   <devices>
     <emulator>/usr/bin/qemu-system-x86_64</emulator>
