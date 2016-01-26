@@ -15,6 +15,13 @@ Intel VT-x / AMD SVM is required.
 
 * Download OS X El Capitan or macOS Sierra installer from Apple App Store.
 
+* Clone this repository. Files included in this repository are needed for ISO
+  creation.
+
+  ```
+  git clone https://github.com/kholia/OSX-KVM.git
+  ```
+
 * Run the ISO creation script `create_install_iso.sh` included in this
   repository, making sure to use 'sudo'.
 
